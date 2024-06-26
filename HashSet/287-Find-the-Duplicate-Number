@@ -1,0 +1,14 @@
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        
+        for (int num : nums) {
+            if (!set.add(num)) { // If we cannot add num to set, it means it's already present (duplicate found)
+                return num;
+            }
+        }
+        
+        return -1; // Return -1 if no duplicate is found (though it depends on your requirements)
+    }
+}
