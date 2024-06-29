@@ -1,0 +1,29 @@
+class Solution {
+    public void duplicateZeros(int[] nums) {
+        int no_of_zeroes = 0;
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] == 0){
+                no_of_zeroes++;
+            }
+        }
+
+        int i = nums.length - 1;
+        int j = nums.length - 1 + no_of_zeroes;
+
+        while(i != j){
+            if(j < nums.length){
+                nums[j] = nums[i];
+            }
+            j--;
+
+            if(nums[i] == 0){
+                if(j < nums.length){
+                    nums[j] = nums[i];
+                }
+                j--;
+            }
+            
+            i--;
+        }
+    }
+}
